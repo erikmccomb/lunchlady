@@ -35,12 +35,6 @@ def cash
     @calories.clear
     main_menu
   end
-  puts ''
-  puts ''
-  puts 'Next order please!'
-  puts ''
-  puts ''
-  main_menu
 end
 
 
@@ -63,6 +57,11 @@ def main_menu
   puts 'Would you like to place another order? (Yes/No)'
   resp = gets.strip.downcase
   if resp == 'yes'
+    puts ''
+    puts ''
+    puts 'Next order please!'
+    puts ''
+    puts ''
     main_menu
   end
   exit
