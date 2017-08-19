@@ -23,11 +23,23 @@ end
 def cash
   puts "The total calorie count for you meal is #{@calories.inject(:+)} Cal."
   puts "Your grand total today will be $#{@price.inject(:+)}."
+  puts 'Would you like to place this order, or start over?'
+  puts '1) Place my order'
+  puts '2) Forget it, lets start over.'
+  resp = gets.to_i
+  if resp == 2
+    puts 'Not a problem! Lets start over!'
+    @order.clear
+    @dishes.clear
+    @price.clear
+    @calories.clear
+    main_menu
+  end
+  exit
 end
 
 
 def main_menu
-  puts 'We are currently serving lunch; What would you like?'
   first_course
   puts ''
   puts 'Excellent choice! That comes with two sides. Which would you like?'
@@ -38,7 +50,6 @@ def main_menu
   to_go
   puts '-----------------------------------'
   cash
-
   puts 'Have a great day!'.colorize(:orange)
   @order.clear
   @dishes.clear
@@ -54,6 +65,7 @@ end
 
 def now_serv
   puts 'Welcome to McCombs!'.colorize(:magenta)
+  puts 'We are currently serving lunch; What would you like?'
   main_menu
 end
 
