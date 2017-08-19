@@ -35,7 +35,12 @@ def cash
     @calories.clear
     main_menu
   end
-  exit
+  puts ''
+  puts ''
+  puts 'Next order please!'
+  puts ''
+  puts ''
+  main_menu
 end
 
 
